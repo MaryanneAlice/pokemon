@@ -1,0 +1,29 @@
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title {
+    padding: 1rem .5rem;
+}
+
+.separator {
+    padding: 1rem 0rem;
+}
+
+.img {
+    width: min-content;
+}
+
+.card {
+    width: 100%;
+}
+
+.left {
+    text-align: left !important;
+}
+
+
+.back {
+    font-size: 18px;
+}

@@ -1,0 +1,28 @@
+.title {
+    padding: 1rem .5rem;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.input {
+    width: 100%;
+}
+
+.legend {
+    font-size: 10px;
+}
+
+.img {
+    margin: 0 auto;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.separator {
+    padding: 1rem 0rem;
+}

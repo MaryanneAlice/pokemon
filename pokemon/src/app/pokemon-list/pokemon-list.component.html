@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="col-sm-8 col-md-10 col-lg-10 col-xs-10 center">
+        <div class="title">
+            <h1>Guia pokémons</h1>
+        </div>
+        <div class="center"> 
+            <form [formGroup]="form">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="input form-group">
+                            <input
+                                type="text" 
+                                class="form-control" 
+                                aria-describedby="Insira o nome do pokémon" 
+                                placeholder="Ex. Pikachu" 
+                                formControlName="name"/>
+                            <span class="legend">Informe o pokémon que deseja buscar</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <button class="btn btn-primary" (click)="search()">
+                                Buscar
+                            </button>
+                            <div class="separator"></div>
+                            <p (click)="listAll()">Listar Todos</p>
+                        </div>
+                    </div>
+                  </div>
+            </form>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="title">
+            <h2> {{subTittle}} </h2>
+            <p *ngIf="qtdPokemons > 0">Foram encontrados {{qtdPokemons}} pokémons </p>
+            <p *ngIf="qtdPokemons == 0">Não foram encontrados pokémons </p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4" *ngFor="let pokemon of pokemonList">
+            <div class="card center" (click)="navigateTo(pokemon.name)">
+                <img [src]="pokemon?.imageUrl" class="card-img-top img-fluid img" [alt]="pokemon?.name">
+                <div class="card-body">
+                  <h5 class="card-title">Nome: {{pokemon?.name}}</h5>
+                  <p class="card-text">ID: {{pokemon?.id}}</p>
+                  <p class="card-text">Tipo(s): {{pokemon?.types ? pokemon.types : 'Não informado'}}</p>
+                </div>
+              </div>
+              <div class="separator"></div>
+        </div>
+    </div>
+</div>

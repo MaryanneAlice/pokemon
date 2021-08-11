@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <p class="back" (click)="back()">Voltar</p>
+        </div>
+        <div class="col-sm-8 col-md-10 col-lg-10 col-xs-10 center">
+            <div class="title">
+                <h1>Pokémon {{pokemon.name}}</h1>
+            </div>
+
+            <div class="card center">
+                <img [src]="pokemon.imageUrlHiRes" class="card-img-top img-fluid img" [alt]="pokemon.name">
+                <div class="card-body left">
+                  <p class="card-text">ID: {{pokemon.id}}</p>
+                  <p class="card-text">Tipo(s): {{pokemon.types ? pokemon.types : 'Não informado'}}</p>
+                  <div>
+                    <p class="card-text">Ataques: </p>
+                    <div *ngFor="let attack of pokemon.attacks">
+                        <dl>
+                            <dt>{{attack.name}}</dt>
+                            <dd>- Custo de 'mana': {{attack.convertedEnergyCost}}</dd>
+                            <dd>- Dano: {{attack.damage}}</dd>
+                            <dd>- Descrição: {{attack.text}}</dd>
+                          </dl>
+                    </div>
+                    <p class="card-text">Resistência: {{pokemon.hp}}</p>
+                    <p class="card-text">Fraqueza: </p>
+                    <div *ngFor="let weak of pokemon.weakness">
+                      <dl>
+                          <dt>Tipo - Valor</dt>
+                          <dd> {{weak.type}} - {{weak.value}}</dd>
+                        </dl>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="separator"></div>
+
+        </div>
+
+        
+    </div>
+</div>
